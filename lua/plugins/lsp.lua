@@ -9,6 +9,9 @@ require("lspconfig").clangd.setup {
     "--all-scopes-completion",
     "--completion-style=detailed",
   },
+  init_options = {
+    fallbackFlags = {"--std=c++17"}
+  },
   filetypes = {
     "c", "cpp"
   }
