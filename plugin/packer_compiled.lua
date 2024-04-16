@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/home/dds/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["formatter.nvim"] = {
+    loaded = true,
+    path = "/home/dds/.local/share/nvim/site/pack/packer/start/formatter.nvim",
+    url = "https://github.com/mhartington/formatter.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/dds/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -123,11 +128,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/dds/.local/share/nvim/site/pack/packer/start/multiple-cursors.nvim",
     url = "https://github.com/brenton-leighton/multiple-cursors.nvim"
-  },
-  neoformat = {
-    loaded = true,
-    path = "/home/dds/.local/share/nvim/site/pack/packer/start/neoformat",
-    url = "https://github.com/sbdchd/neoformat"
   },
   ["nvim-autopairs"] = {
     loaded = true,

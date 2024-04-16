@@ -43,7 +43,7 @@ return require('packer').startup(function(use)
     requires = { {'nvim-lua/plenary.nvim'} }
   }
   use "brenton-leighton/multiple-cursors.nvim"
-  use "sbdchd/neoformat"
+  use "mhartington/formatter.nvim"
 
   if packer_bootstrap then
     require('packer').sync()
