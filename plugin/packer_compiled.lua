@@ -119,20 +119,15 @@ _G.packer_plugins = {
     path = "/home/dds/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
-  ["mason-lspconfig.nvim"] = {
-    loaded = true,
-    path = "/home/dds/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
-    url = "https://github.com/williamboman/mason-lspconfig.nvim"
-  },
-  ["mason.nvim"] = {
-    loaded = true,
-    path = "/home/dds/.local/share/nvim/site/pack/packer/start/mason.nvim",
-    url = "https://github.com/williamboman/mason.nvim"
-  },
   ["multiple-cursors.nvim"] = {
     loaded = true,
     path = "/home/dds/.local/share/nvim/site/pack/packer/start/multiple-cursors.nvim",
     url = "https://github.com/brenton-leighton/multiple-cursors.nvim"
+  },
+  neoformat = {
+    loaded = true,
+    path = "/home/dds/.local/share/nvim/site/pack/packer/start/neoformat",
+    url = "https://github.com/sbdchd/neoformat"
   },
   ["nvim-autopairs"] = {
     loaded = true,

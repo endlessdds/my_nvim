@@ -1,53 +1,35 @@
-require("mason").setup({
-  ui = {
-      icons = {
-          package_installed = "✓",
-          package_pending = "➜",
-          package_uninstalled = "✗"
-      }
+local cap = require('cmp_nvim_lsp').default_capabilities()
+
+require("lspconfig").clangd.setup {
+  capabilities = cap,
+  cmd = {
+    "clangd",
+    "--header-insertion=never",
+    "--query-driver=/opt/homebrew/opt/llvm/bin/clang",
+    "--all-scopes-completion",
+    "--completion-style=detailed",
+  },
+  filetypes = {
+    "c", "cpp"
   }
-})
-
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-require("lspconfig").lua_ls.setup {
-  capabilities = capabilities,
 }
 
-require("mason-lspconfig").setup({
-	ensure_installed = {
-		"lua_ls",
-    "clangd",
-	},
-})
-
-local lspconfig = require('lspconfig')
-
-require("mason-lspconfig").setup_handlers({
-  function (server_name)
-    require("lspconfig")[server_name].setup{}
-  end,
-  -- Next, you can provide targeted overrides for specific servers.
-  ["lua_ls"] = function ()
-    lspconfig.lua_ls.setup {
-      settings = {
-        Lua = {
-          diagnostics = {
-            globals = { "vim" }
-          }
-        }
-     }
-  }
-  end,
-  ["clangd"] = function ()
-    lspconfig.clangd.setup {
-      cmd = {
-        "clangd",
-        "--header-insertion=never",
-        "--query-driver=/opt/homebrew/opt/llvm/bin/clang",
-        "--all-scopes-completion",
-        "--completion-style=detailed",
+require("lspconfig").lua_ls.setup {
+  capabilities = cap,
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { "vim" }
       }
     }
-  end
-})
+  }
+}
+
+require'lspconfig'.cmake.setup{
+  capabilities = cap,
+  cmd = { "cmake-language-server" },
+  filetypes = { "cmake" },
+  init_options = {
+    buildDirectory = "build"
+  }
+}
